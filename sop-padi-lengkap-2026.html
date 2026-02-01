@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Budidaya Padi Lengkap - Ciherang & Japonica Tarabas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5a27;
+            --secondary: #f4a100;
+            --accent: #e74c3c;
+            --success: #2ecc71;
+            --japonica: #8e44ad;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--success);
+        }
+
+        .hero {
+            padding: 5rem 2rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #2d5a27, #4a8c3f);
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: #000;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .section {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--success);
+            border-bottom: 2px solid var(--success);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-japonica {
+            border-color: var(--japonica);
+        }
+
+        .section-japonica .section-title {
+            color: var(--japonica);
+            border-bottom-color: var(--japonica);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.8rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.85rem;
+        }
+
+        th,
+        td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #2d5a27, #4a8c3f);
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+
+        .alert-danger {
+            background: rgba(231, 76, 60, 0.2);
+            border-left: 4px solid var(--accent);
+        }
+
+        .alert-success {
+            background: rgba(46, 204, 113, 0.2);
+            border-left: 4px solid var(--success);
+        }
+
+        .alert-warning {
+            background: rgba(244, 161, 0, 0.2);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .alert-japonica {
+            background: rgba(142, 68, 173, 0.2);
+            border-left: 4px solid var(--japonica);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--success);
+        }
+
+        .info-card-japonica {
+            border-left-color: var(--japonica);
+        }
+
+        .info-card h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .comparison-ciherang {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid var(--success);
+        }
+
+        .comparison-japonica {
+            background: rgba(142, 68, 173, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid var(--japonica);
+        }
+
+        .comparison h4 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.2rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            background: rgba(244, 161, 0, 0.3);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .timeline-item.active {
+            background: var(--success);
+            color: #000;
+        }
+
+        .timeline-item.warning {
+            background: var(--secondary);
+            color: #000;
+        }
+
+        .toc {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .toc h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .toc a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.3rem 0.5rem;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .toc a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag {
+            background: var(--success);
+            color: #000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .price-tag-premium {
+            background: var(--japonica);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">🌾 SOP Padi Lengkap - Paron Ngawi 2026</div>
+    </nav>
+
+    <header class="hero">
+        <h1>🌾 SOP Budidaya Padi Lengkap</h1>
+        <p>Diagnosa Fe Toxicity + Solusi + Perbandingan Varietas</p>
+        <span class="location-badge">📍 Paron, Ngawi | Total 17.000 m²</span>
+    </header>
+
+    <div class="container">
+        <!-- DAFTAR ISI -->
+        <div class="toc">
+            <h3>📑 DAFTAR ISI</h3>
+            <div class="toc-grid">
+                <a href="#diagnosa">1. Diagnosa Fe Toxicity</a>
+                <a href="#solusi">2. Solusi 4 Langkah</a>
+                <a href="#varietas">3. Perbandingan Varietas</a>
+                <a href="#jarak-tanam">4. Jarak Tanam</a>
+                <a href="#herbisida">5. Herbisida</a>
+                <a href="#pupuk-ciherang">6. Pupuk Ciherang (7.000m²)</a>
+                <a href="#pupuk-japonica">7. Pupuk Japonica (10.000m²)</a>
+                <a href="#pestisida">8. Pestisida</a>
+                <a href="#timeline">9. Timeline Lengkap</a>
+                <a href="#belanja">10. Daftar Belanja</a>
+                <a href="#proyeksi">11. Proyeksi Pendapatan</a>
+            </div>
+        </div>
+
+        <!-- DIAGNOSA -->
+        <section class="section" id="diagnosa">
+            <h2 class="section-title">🔬 1. DIAGNOSA: Fe Toxicity (Keracunan Besi)</h2>
+
+            <div class="alert alert-danger">
+                <strong>⚠️ TEMUAN:</strong> pH lahan 5.5-6.5 = NORMAL! Masalah "asem-aseman" adalah <strong>KERACUNAN
+                    BESI (Fe Toxicity)</strong> dari genangan air MT1, BUKAN pH rendah.
+            </div>
+
+            <table>
+                <tr>
+                    <th>Gejala Anda</th>
+                    <th>Gejala Fe Toxicity</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Daun menguning dan coklat</td>
+                    <td>Daun kuning-kemerahan, bercak coklat ("bronzing")</td>
+                    <td style="color: var(--accent);">✓ COCOK</td>
+                </tr>
+                <tr>
+                    <td>Tanaman kerdil</td>
+                    <td>Pertumbuhan kerdil, anakan sedikit</td>
+                    <td style="color: var(--accent);">✓ COCOK</td>
+                </tr>
+                <tr>
+                    <td>30% lahan terdampak di area genangan</td>
+                    <td>Terjadi di area tergenang, drainase buruk</td>
+                    <td style="color: var(--accent);">✓ COCOK</td>
+                </tr>
+                <tr>
+                    <td>MT1 susah drainase</td>
+                    <td>Kondisi anaerob meningkatkan Fe terlarut</td>
+                    <td style="color: var(--accent);">✓ COCOK</td>
+                </tr>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>💡 Kenapa pupuk "tidak terasa efeknya"?</strong><br>
+                Fe Toxicity merusak akar → tanaman tidak bisa menyerap nutrisi → pupuk sebanyak apapun sia-sia.
+                <strong>Atasi Fe Toxicity DULU, baru pupuk akan efektif!</strong>
+            </div>
+        </section>
+
+        <!-- SOLUSI -->
+        <section class="section" id="solusi">
+            <h2 class="section-title">💊 2. SOLUSI: 4 Langkah Atasi Fe Toxicity</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>1️⃣ DRAINASE (Prioritas #1)</h4>
+                    <ul>
+                        <li>Ratakan lahan saat pembajakan</li>
+                        <li>Parit keliling + tengah</li>
+                        <li>Sistem walet: genang 5 hari → kering 2 hari</li>
+                        <li>Kuras air hitam/berbau besi</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>2️⃣ PUPUK KALIUM (KCl)</h4>
+                    <ul>
+                        <li>KCl WAJIB, bukan opsional!</li>
+                        <li>K membantu tanaman tahan Fe toxicity</li>
+                        <li>Dosis: 75-100 kg/ha</li>
+                        <li>Aplikasi: 45 HST (fase bunting)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>3️⃣ DOLOMIT (Bukan Petrocas)</h4>
+                    <ul>
+                        <li>Dolomit = Ca + Mg → binding Fe</li>
+                        <li>Karena pH sudah OK: 200-300 kg/7000m²</li>
+                        <li>Frekuensi: Setiap 2-3 musim</li>
+                        <li>Aplikasi: Sebelum bajak kedua</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>4️⃣ JERAMI DIKEMBALIKAN</h4>
+                    <ul>
+                        <li>Jerami + sisa akar = bahan organik</li>
+                        <li>Membantu binding Fe di tanah</li>
+                        <li>Sebagian boleh dibakar, sisakan yang bisa</li>
+                        <li>Lebih baik dari pupuk kandang 3 ton!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERBANDINGAN VARIETAS -->
+        <section class="section" id="varietas">
+            <h2 class="section-title">🌱 3. PERBANDINGAN VARIETAS</h2>
+
+            <div class="comparison">
+                <div class="comparison-ciherang">
+                    <h4>🌾 CIHERANG (7.000 m²)</h4>
+                    <table>
+                        <tr>
+                            <td>Tipe</td>
+                            <td>Inbrida (bisa tanam ulang)</td>
+                        </tr>
+                        <tr>
+                            <td>Harga Benih</td>
+                            <td>Rp 5.000-8.000/kg</td>
+                        </tr>
+                        <tr>
+                            <td>Kebutuhan Benih</td>
+                            <td>25-30 kg/ha</td>
+                        </tr>
+                        <tr>
+                            <td>Potensi Hasil</td>
+                            <td>6-7 ton/ha</td>
+                        </tr>
+                        <tr>
+                            <td>Harga Gabah Basah</td>
+                            <td><span class="price-tag">Rp 7.000/kg</span></td>
+                        </tr>
+                        <tr>
+                            <td>Umur Panen</td>
+                            <td>95-100 HST</td>
+                        </tr>
+                        <tr>
+                            <td>Keunggulan</td>
+                            <td>Tahan genangan, pasar pasti</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="comparison-japonica">
+                    <h4>🍚 JAPONICA TARABAS (10.000 m²)</h4>
+                    <table>
+                        <tr>
+                            <td>Tipe</td>
+                            <td>Inbrida (bisa tanam ulang)</td>
+                        </tr>
+                        <tr>
+                            <td>Harga Benih</td>
+                            <td>Rp 15.000-25.000/kg</td>
+                        </tr>
+                        <tr>
+                            <td>Kebutuhan Benih</td>
+                            <td>25-30 kg/ha</td>
+                        </tr>
+                        <tr>
+                            <td>Potensi Hasil</td>
+                            <td>4-5 ton/ha (max 7.8 ton)</td>
+                        </tr>
+                        <tr>
+                            <td>Harga Gabah Basah</td>
+                            <td><span class="price-tag price-tag-premium">Rp 10.000/kg</span></td>
+                        </tr>
+                        <tr>
+                            <td>Umur Panen</td>
+                            <td>105-115 HST</td>
+                        </tr>
+                        <tr>
+                            <td>Keunggulan</td>
+                            <td>Harga 43% lebih tinggi, adaptasi Indonesia</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="alert alert-japonica">
+                <strong>💡 INFO JAPONICA TARABAS:</strong><br>
+                - Varietas lokal Indonesia (Subang, Jabar) - LEGAL ditanam<br>
+                - Benih dari Kementan Ngawi ✅<br>
+                - Tahan wereng, tungro, blast<br>
+                - Pemupukan SAMA dengan Ciherang<br>
+                - Kadar amilosa rendah (17%) = nasi pulen, cocok restoran Jepang
+            </div>
+        </section>
+
+        <!-- JARAK TANAM -->
+        <section class="section" id="jarak-tanam">
+            <h2 class="section-title">📐 4. JARAK TANAM (Tanam Manual)</h2>
+
+            <div class="alert alert-warning">
+                <strong>📌 CATATAN:</strong> Tanam manual tidak akan 100% presisi - itu NORMAL! Yang penting mendekati
+                jarak ideal. Toleransi ±5 cm masih bisa diterima.
+            </div>
+
+            <div class="comparison">
+                <div class="comparison-ciherang">
+                    <h4>🌾 CIHERANG (7.000 m²)</h4>
+                    <table>
+                        <tr>
+                            <th colspan="2">Opsi 1: Konvensional (Mudah)</th>
+                        </tr>
+                        <tr>
+                            <td>Jarak Tanam</td>
+                            <td><strong>25 cm × 25 cm</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Bibit/Lubang</td>
+                            <td>2-3 batang</td>
+                        </tr>
+                        <tr>
+                            <td>Populasi/7.000m²</td>
+                            <td>±112.000 rumpun</td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 0.5rem;">
+                        <tr>
+                            <th colspan="2">Opsi 2: Jajar Legowo 2:1 (Hasil Lebih)</th>
+                        </tr>
+                        <tr>
+                            <td>Jarak Tanam</td>
+                            <td><strong>25 × 12.5 × 50 cm</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Artinya</td>
+                            <td>2 baris rapat (12.5cm), lalu lorong 50cm</td>
+                        </tr>
+                        <tr>
+                            <td>Bibit/Lubang</td>
+                            <td>2-3 batang</td>
+                        </tr>
+                        <tr>
+                            <td>Populasi/7.000m²</td>
+                            <td>±150.000 rumpun (+33%)</td>
+                        </tr>
+                        <tr>
+                            <td>Keunggulan</td>
+                            <td>Anakan lebih banyak, sirkulasi udara baik</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="comparison-japonica">
+                    <h4>🍚 JAPONICA TARABAS (10.000 m²)</h4>
+                    <table>
+                        <tr>
+                            <th colspan="2">Rekomendasi Jarak Tanam</th>
+                        </tr>
+                        <tr>
+                            <td>Jarak Tanam</td>
+                            <td><strong>20 cm × 20 cm</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Bibit/Lubang</td>
+                            <td><strong>1-2 batang</strong> (hemat benih!)</td>
+                        </tr>
+                        <tr>
+                            <td>Populasi/10.000m²</td>
+                            <td>±250.000 rumpun</td>
+                        </tr>
+                        <tr>
+                            <td>Catatan</td>
+                            <td>Lebih rapat dari Ciherang karena anakan Japonica lebih sedikit</td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 0.5rem;">
+                        <tr>
+                            <th colspan="2">Tips Tanam Manual Japonica</th>
+                        </tr>
+                        <tr>
+                            <td>1. Gunakan tali/benang</td>
+                            <td>Buat garis panduan setiap 20 cm</td>
+                        </tr>
+                        <tr>
+                            <td>2. Tanam 1 bibit dulu</td>
+                            <td>Hemat benih, anakan akan tumbuh</td>
+                        </tr>
+                        <tr>
+                            <td>3. Jangan terlalu dalam</td>
+                            <td>Kedalaman 2-3 cm saja</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <strong>💡 REKOMENDASI untuk Anda:</strong><br>
+                - <strong>Ciherang:</strong> Pakai konvensional 25×25 cm dulu (lebih mudah manual)<br>
+                - <strong>Japonica:</strong> 20×20 cm dengan 1-2 bibit/lubang<br>
+                - Kalau sudah terbiasa, coba Jajar Legowo musim depan untuk hasil lebih
+            </div>
+        </section>
+
+        <!-- HERBISIDA -->
+        <section class="section" id="herbisida">
+            <h2 class="section-title">🌿 5. HERBISIDA (Data Terverifikasi)</h2>
+
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <th>Bahan Aktif</th>
+                    <th>Bentuk</th>
+                    <th>Dosis/Tangki 16L</th>
+                    <th>Waktu</th>
+                </tr>
+                <tr style="background: rgba(46,204,113,0.1);">
+                    <td><strong>Eros Gold</strong> (UPL)</td>
+                    <td>Pretilachlor 30% + Pyrazosulfuron Ethyl</td>
+                    <td>🟡 Butiran (WDG)</td>
+                    <td>Sesuai lahan</td>
+                    <td><strong>0-3 HST</strong> (Pra-tumbuh)</td>
+                </tr>
+                <tr style="background: rgba(142,68,173,0.1);">
+                    <td><strong>Topshot 60 OD</strong></td>
+                    <td>Penoxsulam 10g/L + Cyhalofop-butyl 50g/L</td>
+                    <td>🔵 Cair (OD)</td>
+                    <td><strong>1.5-2 tutup</strong></td>
+                    <td><strong>12-15 HST</strong> (Utama)</td>
+                </tr>
+                <tr>
+                    <td><strong>Surpass</strong> (Nufarm)</td>
+                    <td>Cyhalofop-butyl</td>
+                    <td>🔵 Cair (EC)</td>
+                    <td>1 tutup</td>
+                    <td rowspan="2"><strong>25 HST</strong> (Backup)</td>
+                </tr>
+                <tr>
+                    <td><strong>Ricebac 400 SC</strong> (UPL)</td>
+                    <td>Sodium Bispyribac 400 g/L</td>
+                    <td>🔵 Cair (SC)</td>
+                    <td>1 tutup</td>
+                </tr>
+            </table>
+
+            <div class="alert alert-success">
+                <strong>✅ STRATEGI HERBISIDA BARU:</strong><br>
+                1. <strong>Eros Gold (0-3 HST)</strong> → Cegah gulma tumbuh<br>
+                2. <strong>Topshot (12-15 HST)</strong> → Basmi gulma + residual effect<br>
+                3. <strong>Surpass+Ricebac (25 HST)</strong> → Backup jika masih ada gulma<br>
+                4. Jeda 5 hari → <strong>Pupuk I (20 HST)</strong>
+            </div>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">Kebutuhan per Lahan:</h3>
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <th>7.000 m² (Ciherang)</th>
+                    <th>10.000 m² (Japonica)</th>
+                    <th>TOTAL</th>
+                </tr>
+                <tr>
+                    <td>Eros Gold</td>
+                    <td>700g - 1.4kg</td>
+                    <td>1 - 2 kg</td>
+                    <td><strong>2 - 3.5 kg</strong></td>
+                </tr>
+                <tr>
+                    <td>Topshot 500ml</td>
+                    <td>1 botol</td>
+                    <td>1-2 botol</td>
+                    <td><strong>2-3 botol</strong></td>
+                </tr>
+                <tr>
+                    <td>Surpass 500ml</td>
+                    <td>1 botol</td>
+                    <td>1 botol</td>
+                    <td><strong>2 botol</strong></td>
+                </tr>
+                <tr>
+                    <td>Ricebac 250ml</td>
+                    <td>1 botol</td>
+                    <td>1 botol</td>
+                    <td><strong>2 botol</strong></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- PUPUK CIHERANG -->
+        <section class="section" id="pupuk-ciherang">
+            <h2 class="section-title">💊 6. PUPUK - LAHAN CIHERANG (7.000 m²)</h2>
+
+            <table>
+                <tr>
+                    <th>Tahap</th>
+                    <th>HST</th>
+                    <th>Urea</th>
+                    <th>Phonska</th>
+                    <th>SP-26</th>
+                    <th>ZA</th>
+                    <th>KCl</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk I</strong></td>
+                    <td>20</td>
+                    <td>75 kg</td>
+                    <td>75 kg</td>
+                    <td>50 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>200 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk II</strong></td>
+                    <td>30</td>
+                    <td>50 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>50 kg</td>
+                    <td>-</td>
+                    <td>100 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk III</strong></td>
+                    <td>45</td>
+                    <td>25 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><strong>75 kg</strong></td>
+                    <td>100 kg</td>
+                </tr>
+                <tr style="background: rgba(46,204,113,0.2);">
+                    <td colspan="2"><strong>TOTAL</strong></td>
+                    <td><strong>150 kg</strong></td>
+                    <td><strong>75 kg</strong></td>
+                    <td><strong>50 kg</strong></td>
+                    <td><strong>50 kg</strong></td>
+                    <td><strong>75 kg</strong></td>
+                    <td><strong>400 kg</strong></td>
+                </tr>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>⚠️ PENTING:</strong> KCl 75 kg di 45 HST adalah KUNCI untuk mengatasi Fe Toxicity dan
+                meningkatkan pengisian gabah!
+            </div>
+        </section>
+
+        <!-- PUPUK JAPONICA -->
+        <section class="section section-japonica" id="pupuk-japonica">
+            <h2 class="section-title">🍚 7. PUPUK - LAHAN JAPONICA TARABAS (10.000 m²)</h2>
+
+            <div class="alert alert-japonica">
+                <strong>💡 INFO:</strong> Pemupukan Japonica Tarabas SAMA dengan Ciherang! Tidak ada perbedaan
+                signifikan.
+            </div>
+
+            <table>
+                <tr>
+                    <th>Tahap</th>
+                    <th>HST</th>
+                    <th>Urea</th>
+                    <th>Phonska</th>
+                    <th>SP-26</th>
+                    <th>ZA</th>
+                    <th>KCl</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk I</strong></td>
+                    <td>20</td>
+                    <td>100 kg</td>
+                    <td>100 kg</td>
+                    <td>75 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>275 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk II</strong></td>
+                    <td>30</td>
+                    <td>75 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>75 kg</td>
+                    <td>-</td>
+                    <td>150 kg</td>
+                </tr>
+                <tr>
+                    <td><strong>Pupuk III</strong></td>
+                    <td>45</td>
+                    <td>50 kg</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><strong>100 kg</strong></td>
+                    <td>150 kg</td>
+                </tr>
+                <tr style="background: rgba(142,68,173,0.2);">
+                    <td colspan="2"><strong>TOTAL</strong></td>
+                    <td><strong>225 kg</strong></td>
+                    <td><strong>100 kg</strong></td>
+                    <td><strong>75 kg</strong></td>
+                    <td><strong>75 kg</strong></td>
+                    <td><strong>100 kg</strong></td>
+                    <td><strong>575 kg</strong></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th colspan="2">Pembenah Tanah</th>
+                </tr>
+                <tr>
+                    <td>Dolomit (setiap 2-3 musim)</td>
+                    <td><strong>300-500 kg</strong></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- PESTISIDA -->
+        <section class="section" id="pestisida">
+            <h2 class="section-title">🛡️ 8. PESTISIDA & FUNGISIDA</h2>
+
+            <table>
+                <tr>
+                    <th>Hama/Penyakit</th>
+                    <th>Produk</th>
+                    <th>Bahan Aktif</th>
+                    <th>Waktu Aplikasi</th>
+                    <th>Catatan</th>
+                </tr>
+                <tr>
+                    <td><strong>Blast + Kresek</strong></td>
+                    <td>Kuproxat (Nufarm)</td>
+                    <td>Tembaga (Cupric Hydroxide)</td>
+                    <td>Preventif 30-40 HST, kuratif saat gejala</td>
+                    <td>2-in-1 jamur+bakteri, murah</td>
+                </tr>
+                <tr>
+                    <td><strong>Sundep</strong></td>
+                    <td>Kozima (Pak Tani)</td>
+                    <td>Abamectin</td>
+                    <td>Saat serangan terlihat</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>Jamur (Opsional)</strong></td>
+                    <td>Antracol</td>
+                    <td>Propineb</td>
+                    <td>Preventif fase bunting</td>
+                    <td>Spontan jika cuaca lembab</td>
+                </tr>
+                <tr>
+                    <td><strong>Walang Sangit</strong></td>
+                    <td>Sesuai kebutuhan</td>
+                    <td>-</td>
+                    <td>Fase pengisian gabah</td>
+                    <td>Optional, lihat kondisi</td>
+                </tr>
+            </table>
+
+            <div class="alert alert-success">
+                <strong>✅ Kabar baik:</strong> Japonica Tarabas tahan wereng, tungro, dan blast. Kemungkinan biaya
+                pestisida lebih rendah!
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="section" id="timeline">
+            <h2 class="section-title">📅 9. TIMELINE LENGKAP (HST)</h2>
+
+            <h3 style="color: var(--success); margin: 1rem 0 0.5rem;">🌾 Ciherang (7.000 m²) - Panen 95-100 HST</h3>
+            <div class="timeline">
+                <span class="timeline-item">-14: Dolomit</span>
+                <span class="timeline-item">0: Tanam</span>
+                <span class="timeline-item active">0-3: Eros Gold</span>
+                <span class="timeline-item active">12-15: Topshot</span>
+                <span class="timeline-item warning">20: Pupuk I</span>
+                <span class="timeline-item">25: Surpass+Ricebac (backup)</span>
+                <span class="timeline-item warning">30: Pupuk II</span>
+                <span class="timeline-item">35-40: Kuproxat</span>
+                <span class="timeline-item warning">45: Pupuk III + KCl</span>
+                <span class="timeline-item">95-100: PANEN</span>
+            </div>
+
+            <h3 style="color: var(--japonica); margin: 1rem 0 0.5rem;">🍚 Japonica Tarabas (10.000 m²) - Panen 105-115
+                HST</h3>
+            <div class="timeline">
+                <span class="timeline-item">-14: Dolomit</span>
+                <span class="timeline-item">0: Tanam</span>
+                <span class="timeline-item active">0-3: Eros Gold</span>
+                <span class="timeline-item active">12-15: Topshot</span>
+                <span class="timeline-item warning">20: Pupuk I</span>
+                <span class="timeline-item">25: Surpass+Ricebac (backup)</span>
+                <span class="timeline-item warning">30: Pupuk II</span>
+                <span class="timeline-item">35-40: Kuproxat</span>
+                <span class="timeline-item warning">45: Pupuk III + KCl</span>
+                <span class="timeline-item">55-60: Antracol (opsional)</span>
+                <span class="timeline-item">105-115: PANEN</span>
+            </div>
+        </section>
+
+        <!-- DAFTAR BELANJA -->
+        <section class="section" id="belanja">
+            <h2 class="section-title">🛒 10. DAFTAR BELANJA per MUSIM</h2>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">📦 PUPUK (2 Lahan = 17.000 m²)</h3>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>7.000 m²</th>
+                    <th>10.000 m²</th>
+                    <th>TOTAL</th>
+                    <th>Sak @50kg</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Urea</td>
+                    <td>150 kg</td>
+                    <td>225 kg</td>
+                    <td><strong>375 kg</strong></td>
+                    <td>8 sak</td>
+                    <td>🟢 Subsidi</td>
+                </tr>
+                <tr>
+                    <td>Phonska</td>
+                    <td>75 kg</td>
+                    <td>100 kg</td>
+                    <td><strong>175 kg</strong></td>
+                    <td>4 sak</td>
+                    <td>🟢 Subsidi</td>
+                </tr>
+                <tr>
+                    <td>ZA</td>
+                    <td>50 kg</td>
+                    <td>75 kg</td>
+                    <td><strong>125 kg</strong></td>
+                    <td>3 sak</td>
+                    <td>🟢 Subsidi</td>
+                </tr>
+                <tr>
+                    <td>SP-26</td>
+                    <td>50 kg</td>
+                    <td>75 kg</td>
+                    <td><strong>125 kg</strong></td>
+                    <td>3 sak</td>
+                    <td>🔴 Non-Sub</td>
+                </tr>
+                <tr>
+                    <td>KCl</td>
+                    <td>75 kg</td>
+                    <td>100 kg</td>
+                    <td><strong>175 kg</strong></td>
+                    <td>4 sak</td>
+                    <td>🔴 Non-Sub</td>
+                </tr>
+                <tr style="background: rgba(244,161,0,0.2);">
+                    <td colspan="3"><strong>TOTAL PUPUK</strong></td>
+                    <td><strong>975 kg</strong></td>
+                    <td>22 sak</td>
+                    <td>-</td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">📦 PEMBENAH TANAH (setiap 2-3 musim)</h3>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>7.000 m²</th>
+                    <th>10.000 m²</th>
+                    <th>TOTAL</th>
+                </tr>
+                <tr>
+                    <td>Dolomit</td>
+                    <td>200-250 kg</td>
+                    <td>300-350 kg</td>
+                    <td><strong>500-600 kg</strong> (10-12 sak)</td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">🌿 HERBISIDA</h3>
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <th>7.000 m²</th>
+                    <th>10.000 m²</th>
+                    <th>TOTAL</th>
+                </tr>
+                <tr>
+                    <td>Eros Gold (butiran)</td>
+                    <td>1-1.5 kg</td>
+                    <td>1.5-2 kg</td>
+                    <td><strong>2.5-3.5 kg</strong></td>
+                </tr>
+                <tr>
+                    <td>Topshot 500ml</td>
+                    <td>1 botol</td>
+                    <td>1-2 botol</td>
+                    <td><strong>2-3 botol</strong></td>
+                </tr>
+                <tr>
+                    <td>Surpass 500ml</td>
+                    <td>1 botol</td>
+                    <td>1 botol</td>
+                    <td><strong>2 botol</strong></td>
+                </tr>
+                <tr>
+                    <td>Ricebac 250ml</td>
+                    <td>1 botol</td>
+                    <td>1 botol</td>
+                    <td><strong>2 botol</strong></td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">🛡️ PESTISIDA</h3>
+            <table>
+                <tr>
+                    <th>Produk</th>
+                    <th>Kebutuhan</th>
+                    <th>Catatan</th>
+                </tr>
+                <tr>
+                    <td>Kuproxat</td>
+                    <td>2-3 botol</td>
+                    <td>Blast + Kresek</td>
+                </tr>
+                <tr>
+                    <td>Kozima</td>
+                    <td>1-2 botol</td>
+                    <td>Sundep</td>
+                </tr>
+                <tr>
+                    <td>Antracol</td>
+                    <td>1-2 bungkus</td>
+                    <td>Opsional</td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--secondary); margin: 1rem 0 0.5rem;">🌱 BENIH</h3>
+            <table>
+                <tr>
+                    <th>Varietas</th>
+                    <th>Lahan</th>
+                    <th>Kebutuhan</th>
+                    <th>Sumber</th>
+                </tr>
+                <tr>
+                    <td>Ciherang</td>
+                    <td>7.000 m²</td>
+                    <td>15-20 kg</td>
+                    <td>Penangkar lokal / hasil panen sebelumnya</td>
+                </tr>
+                <tr>
+                    <td>Japonica Tarabas</td>
+                    <td>10.000 m²</td>
+                    <td>25-30 kg</td>
+                    <td>Kementan Ngawi (kontak yang sudah ada)</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- PROYEKSI PENDAPATAN -->
+        <section class="section" id="proyeksi">
+            <h2 class="section-title">💰 11. PROYEKSI PENDAPATAN</h2>
+
+            <h3 style="color: var(--accent); margin: 1rem 0 0.5rem;">❌ KONDISI LAMA (Sebelum SOP Baru)</h3>
+            <table>
+                <tr>
+                    <th>Lahan</th>
+                    <th>Hasil</th>
+                    <th>Harga</th>
+                    <th>Pendapatan</th>
+                </tr>
+                <tr>
+                    <td>7.000 m² (Ciherang)</td>
+                    <td>4.5-5 ton</td>
+                    <td>Rp 7.000</td>
+                    <td>Rp 31.5-35 juta</td>
+                </tr>
+                <tr>
+                    <td>10.000 m² (Ciherang)</td>
+                    <td>6-7 ton</td>
+                    <td>Rp 7.000</td>
+                    <td>Rp 42-49 juta</td>
+                </tr>
+                <tr style="background: rgba(231,76,60,0.2);">
+                    <td><strong>TOTAL/MUSIM</strong></td>
+                    <td>10.5-12 ton</td>
+                    <td>-</td>
+                    <td><strong>Rp 73.5-84 juta</strong></td>
+                </tr>
+                <tr style="background: rgba(231,76,60,0.2);">
+                    <td><strong>TOTAL/TAHUN</strong></td>
+                    <td>21-24 ton</td>
+                    <td>-</td>
+                    <td><strong>Rp 147-168 juta</strong></td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--success); margin: 1rem 0 0.5rem;">✅ PROYEKSI BARU (Dengan SOP Baru + Japonica)</h3>
+            <table>
+                <tr>
+                    <th>Lahan</th>
+                    <th>Hasil (Proyeksi)</th>
+                    <th>Harga</th>
+                    <th>Pendapatan</th>
+                </tr>
+                <tr>
+                    <td>7.000 m² (Ciherang + Fe teratasi)</td>
+                    <td>5.5-6.5 ton</td>
+                    <td>Rp 7.000</td>
+                    <td>Rp 38.5-45.5 juta</td>
+                </tr>
+                <tr style="background: rgba(142,68,173,0.1);">
+                    <td>10.000 m² (Japonica Tarabas)</td>
+                    <td>5-6 ton</td>
+                    <td><strong>Rp 10.000</strong></td>
+                    <td><strong>Rp 50-60 juta</strong></td>
+                </tr>
+                <tr style="background: rgba(46,204,113,0.2);">
+                    <td><strong>TOTAL/MUSIM</strong></td>
+                    <td>10.5-12.5 ton</td>
+                    <td>-</td>
+                    <td><strong>Rp 88.5-105.5 juta</strong></td>
+                </tr>
+                <tr style="background: rgba(46,204,113,0.2);">
+                    <td><strong>TOTAL/TAHUN</strong></td>
+                    <td>21-25 ton</td>
+                    <td>-</td>
+                    <td><strong>Rp 177-211 juta</strong></td>
+                </tr>
+            </table>
+
+            <div class="alert alert-success">
+                <strong>📈 POTENSI KENAIKAN PENDAPATAN:</strong><br>
+                - Per musim: <strong>+Rp 15-21 juta</strong> (dari Rp 73-84jt → Rp 88-105jt)<br>
+                - Per tahun: <strong>+Rp 30-43 juta</strong> (dari Rp 147-168jt → Rp 177-211jt)<br>
+                - Ini dengan hasil SAMA (10-12 ton), hanya karena <strong>harga Japonica 43% lebih tinggi!</strong>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>⚠️ CATATAN REALISTIS:</strong><br>
+                - Japonica musim pertama mungkin hasil belum maksimal (adaptasi)<br>
+                - Fokus cari pembeli tetap Japonica (restoran Jepang, hotel, katering)<br>
+                - Kalau Japonica sukses, ekspansi ke 2 lahan musim depan
+            </div>
+        </section>
+
+        <!-- KESALAHAN LAMA -->
+        <section class="section">
+            <h2 class="section-title">⚠️ KESALAHAN SOP LAMA & PERBAIKANNYA</h2>
+
+            <table>
+                <tr>
+                    <th>Kesalahan</th>
+                    <th>Dampak</th>
+                    <th>Perbaikan</th>
+                </tr>
+                <tr>
+                    <td>Pupuk 7 HST</td>
+                    <td>Nutrisi untuk gulma</td>
+                    <td>Mulai 20 HST setelah herbisida</td>
+                </tr>
+                <tr>
+                    <td>Petrocas 100 kg saja</td>
+                    <td>Tidak atasi Fe toxicity</td>
+                    <td>Dolomit 200-300 kg + drainase</td>
+                </tr>
+                <tr>
+                    <td>KCl kurang/tidak ada</td>
+                    <td>Tanaman rentan Fe toxicity</td>
+                    <td>KCl 75-100 kg/ha di 45 HST</td>
+                </tr>
+                <tr>
+                    <td>Topshot tidak efektif</td>
+                    <td>Timing/kondisi salah</td>
+                    <td>Aplikasi 12-15 HST, kondisi macak-macak</td>
+                </tr>
+                <tr>
+                    <td>Kohe 3 ton tidak efek</td>
+                    <td>Kualitas/timing tidak tepat</td>
+                    <td>Jerami dikembalikan lebih praktis</td>
+                </tr>
+                <tr>
+                    <td>Hibrida 3-4 biji/lubang</td>
+                    <td>Boros benih</td>
+                    <td>Ciherang 2-3 biji, Japonica 1-2 biji</td>
+                </tr>
+                <tr>
+                    <td>Jual gabah basah murah</td>
+                    <td>Margin rendah</td>
+                    <td>Japonica harga 43% lebih tinggi</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- RINGKASAN -->
+        <section class="section">
+            <h2 class="section-title">📋 RINGKASAN EKSEKUTIF</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🎯 Target Utama</h4>
+                    <ul>
+                        <li>Atasi Fe Toxicity (drainase + KCl)</li>
+                        <li>Naikkan pendapatan via Japonica</li>
+                        <li>Efisiensi pupuk (timing benar)</li>
+                    </ul>
+                </div>
+                <div class="info-card info-card-japonica">
+                    <h4>🍚 Japonica Tarabas</h4>
+                    <ul>
+                        <li>Lahan 10.000 m² musim ini</li>
+                        <li>Benih dari Kementan Ngawi</li>
+                        <li>Harga Rp 10.000/kg vs Rp 7.000</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>💡 Kunci Sukses</h4>
+                    <ul>
+                        <li>Drainase MT1 lebih baik</li>
+                        <li>KCl 45 HST WAJIB</li>
+                        <li>Topshot 12-15 HST + residual</li>
+                        <li>Cari pembeli Japonica tetap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>SOP Budidaya Padi Lengkap - Ciherang & Japonica Tarabas</strong></p>
+        <p>Paron, Ngawi | Musim 2026 | Data Terverifikasi dari Riset</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+            Sumber: UPL, Nufarm, Kementan, BBPADI, Trubus, Pertanian.go.id
+        </p>
+    </footer>
+</body>
+
+</html>
